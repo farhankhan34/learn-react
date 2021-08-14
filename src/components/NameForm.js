@@ -8,6 +8,7 @@ class NameForm extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.WAComplianceYes = this.WAComplianceYes.bind(this);
     }
 
     handleChange(event) {
@@ -22,8 +23,16 @@ class NameForm extends React.Component {
         this.props.addBoard(this.state.value);
     }
 
+    WAComplianceYes(event) {
+        event.preventDefault();
+
+        let practitionerForm = document.createElement('form')
+
+    }
+
     render() {
         return (
+            <div>
             <form onSubmit={this.handleSubmit} className="name-form">
                 <div>{this.props.cat}</div>
                 <div>{this.props.dog}</div>
@@ -33,6 +42,14 @@ class NameForm extends React.Component {
                 </label>
                 <input type="submit" value="Submit" />
             </form>
+            <div className="CPDform">
+                <form>
+                    <h2>Do you need WA Compliance Reporting?</h2>
+                <input type="button" className="newForm" value="Yes" onChange={this.WAComplianceYes} />
+                <input type="button" className="newForm" value="No" />
+                </form>
+            </div>
+            </div>
         );
     }
 }

@@ -29725,7 +29725,7 @@ var TaskBoard = /*#__PURE__*/function (_React$Component) {
   _createClass(TaskBoard, [{
     key: "removeBoard",
     value: function removeBoard(event) {
-      alert('This board will be removed');
+      //  alert('This board will be removed');
       event.preventDefault();
       this.props.deleteBoard(this.props.boardName);
     }
@@ -29795,6 +29795,7 @@ var NameForm = /*#__PURE__*/function (_React$Component) {
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.WAComplianceYes = _this.WAComplianceYes.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -29815,9 +29816,15 @@ var NameForm = /*#__PURE__*/function (_React$Component) {
       this.props.addBoard(this.state.value);
     }
   }, {
+    key: "WAComplianceYes",
+    value: function WAComplianceYes(event) {
+      event.preventDefault();
+      var practitionerForm = document.createElement('form');
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("form", {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "name-form"
       }, /*#__PURE__*/_react.default.createElement("div", null, this.props.cat), /*#__PURE__*/_react.default.createElement("div", null, this.props.dog), /*#__PURE__*/_react.default.createElement("label", null, "Type name of the Board :", /*#__PURE__*/_react.default.createElement("input", {
@@ -29827,7 +29834,18 @@ var NameForm = /*#__PURE__*/function (_React$Component) {
       })), /*#__PURE__*/_react.default.createElement("input", {
         type: "submit",
         value: "Submit"
-      }));
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "CPDform"
+      }, /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("h2", null, "Do you need WA Compliance Reporting?"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "button",
+        className: "newForm",
+        value: "Yes",
+        onChange: this.WAComplianceYes
+      }), /*#__PURE__*/_react.default.createElement("input", {
+        type: "button",
+        className: "newForm",
+        value: "No"
+      }))));
     }
   }]);
 
@@ -29889,6 +29907,7 @@ var BoardList = /*#__PURE__*/function (_React$Component) {
       boardItems: ['Thinking of doing', 'Will Do next', 'Working on it', 'Done wright', 'Done long time ago']
     };
     _this.addBoard = _this.addBoard.bind(_assertThisInitialized(_this));
+    _this.deleteBoard = _this.deleteBoard.bind(_assertThisInitialized(_this));
     return _this;
   } // This function add a Board into the board list
 
@@ -29907,7 +29926,12 @@ var BoardList = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "deleteBoard",
     value: function deleteBoard($boardName) {
-      alert($boardName + " will be deleted");
+      //alert($boardName + " will be deleted")
+      //console.log( this.state.boardItems);
+      var temp = this.state.boardItems;
+      var index = temp.indexOf($boardName);
+      temp.splice(index, 1);
+      this.setState(temp); //console.log( this.state.boardItems);
     }
   }, {
     key: "render",
@@ -29928,10 +29952,6 @@ var BoardList = /*#__PURE__*/function (_React$Component) {
       }, listItems), /*#__PURE__*/_react.default.createElement("button", {
         onClick: this.addBoard,
         id: "add-board",
-        type: "button"
-      }, "+"), /*#__PURE__*/_react.default.createElement("button", {
-        onClick: this.boardItems,
-        id: "remove-board",
         type: "button"
       }, "+"), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement(_NameForm.default, {
         addBoard: this.addBoard,
@@ -30037,7 +30057,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55249" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56342" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

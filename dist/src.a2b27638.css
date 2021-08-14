@@ -11,6 +11,9 @@ body h1 {
   font-size: 40px;
   margin-top: 30px;
 }
+body h2 {
+  color: #ffffff;
+}
 body .board-list {
   border: 3px solid salmon;
 }
@@ -28,6 +31,20 @@ body .col-4 {
   width: 33%;
   background-color: #E7DACB;
   border: 3px solid brown;
+}
+body .CPDform {
+  background-color: #0052CC;
+  border-radius: 10px;
+  margin: 10em;
+  padding: 1em;
+}
+body .newForm {
+  background-color: #70AD47;
+  border-color: #669E40;
+  border-radius: 5px 0px;
+  padding: 0.5em;
+  margin: 0.5em;
+  color: #000000;
 }
 
 /*# sourceMappingURL=/src.a2b27638.css.map */

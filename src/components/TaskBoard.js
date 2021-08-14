@@ -8,7 +8,7 @@ class TaskBoard extends React.Component {
     }
 
     removeBoard(event){
-        alert('This board will be removed');
+      //  alert('This board will be removed');
 
         event.preventDefault();
         this.props.deleteBoard(this.props.boardName);

@@ -13,6 +13,10 @@ body {
     margin-top: 30px;
   }
 
+  h2 {
+    color: #ffffff;
+  }
+
   .board-list{
     border: 3px solid salmon;
   }
@@ -33,4 +37,23 @@ body {
     background-color: #E7DACB;
     border: 3px solid brown;
   }
+
+  .CPDform {
+    background-color: #0052CC;
+    border-radius: 10px;
+    margin: 10em;
+    padding: 1em;
+
+  }
+
+  .newForm {
+    background-color: #70AD47;
+    border-color:#669E40;
+    border-radius: 5px 0px;
+    padding: 0.5em;
+    margin: 0.5em;
+    color: #000000;
+  } 
+
+
 }

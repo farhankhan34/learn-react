@@ -9,6 +9,7 @@ class BoardList extends React.Component {
         super(props);
         this.state =  { boardItems : ['Thinking of doing','Will Do next','Working on it','Done wright','Done long time ago']};
         this.addBoard = this.addBoard.bind(this);
+        this.deleteBoard = this.deleteBoard.bind(this);
     }
 
     // This function add a Board into the board list
@@ -23,7 +24,18 @@ class BoardList extends React.Component {
     }
 
     deleteBoard($boardName){
-        alert($boardName + " will be deleted")
+        //alert($boardName + " will be deleted")
+        //console.log( this.state.boardItems);
+
+        let temp = this.state.boardItems;
+        
+        let index = temp.indexOf($boardName);
+
+        temp.splice(index, 1);
+        this.setState(temp);
+
+        //console.log( this.state.boardItems);
+
     }
 
     render() {
@@ -43,7 +55,6 @@ class BoardList extends React.Component {
                     {listItems}
                 </div>
                 <button onClick={this.addBoard} id="add-board" type="button">+</button>
-                <button onClick={this.boardItems} id="remove-board" type="button">+</button>
                 <hr/>
                 <NameForm addBoard={this.addBoard} dog="ryan" cat="Billi"/>
             </div>
